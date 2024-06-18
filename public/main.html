@@ -1,0 +1,45 @@
+<!-- public/main.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Twitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#"><img src="https://cdn3.emoji.gg/emojis/6108_pikachu_evil.png" alt="pikachu"></a>
+        <h1>Mini Twitter</h1>
+        <nav>
+            <ul>
+                <li><a href="homepage.html" id="home-link">Home</a></li>
+                <li><a href="profile.html" id="profile-link">Profile</a></li>
+                <li><a href="#" id="logout-link">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="tweet-box">
+            <textarea id="tweet-input" placeholder="What's happening?"></textarea>
+            <button id="tweet-btn">Tweet</button>
+        </section>
+        <div class="center-button">
+            <a href="login.html"><button id="login-btn">Login</button></a>
+        </div>
+        <section id="tweet-feed">
+            <!-- Tweets will be dynamically loaded here -->
+        </section>
+        <section id="logout-confirm" style="display: none;">
+            <p>Nah... Really?</p>
+            <button id="logout-yes">Yeah... Sorry</button>
+            <button id="logout-no">No, just a joke</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy;Project for WebProgramming (2024, first semester)</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <a href="main.html"><img src="https://cdn3.emoji.gg/emojis/6108_pikachu_evil.png" alt="pikachu"></a>
+        <h2>Login</h2>
+    </header>
+    <main>
+        <div id="login-container">
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" id="login-btn">Login</button>
+            </form>
+            <a href="register.html"><button id="register-btn">Create an account</button></a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy;Project for WebProgramming (2024, first semester)</p>
+    </footer>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            try {
+                const response = await fetch('/api/user/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    localStorage.setItem('loggedInUser', JSON.stringify({ userId: result.userId, username, avatar: result.avatar, name: result.name }));
+                    alert('Login successful!');
+                    window.location.href = 'main.html';
+                } else {
+                    alert('Login failed: ' + result.error);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred during login.');
+            }
+        });
+    </script>
+</body>
+</html>
