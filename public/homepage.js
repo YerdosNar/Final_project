@@ -1,4 +1,3 @@
-// public/script.js
 document.addEventListener('DOMContentLoaded', () => {
     const tweetFeed = document.getElementById('tweet-feed');
 
