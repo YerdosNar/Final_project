@@ -16,3 +16,7 @@ A mini Twitter project for Web Programming (2024, first semester).
 4. Run:
    ```sh
    node app.js
+
+5. Open your browser, run "http://localhost:3000/main.html".
+
+6. Voila!
