@@ -6,4 +6,4 @@ A mini Twitter project for Web Programming (2024, first semester).
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME.git
+   git clone https://github.com/YerdosNar/Final_project.git
